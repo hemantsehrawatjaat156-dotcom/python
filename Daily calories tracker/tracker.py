@@ -2,23 +2,18 @@
 # Project Title : Daily Calorie Tracker CLI
 # Author        : [Hemant singh sehrawat]
 # Date          : [08/11/2025]
-# Description   : A Python CLI tool to track daily calorie intake,
-#                 compare it with a user-defined limit,
-#                 and optionally save the session summary to a file.
+
 # -------------------------------------------------------------
 
-# Setup & Introduction
 print("==========================================")
 print(" Welcome to the Daily Calorie Tracker CLI ")
 print("==========================================")
 print("This tool helps you log meals, track calories,")
 print("and compare your total intake with your daily limit.\n")
 
-# Input & Data Collection
 meal_names = []
 calorie_values = []
 
-# Ask user how many meals to enter
 num_meals = int(input("How many meals would you like to log today? "))
 
 for i in range(num_meals):
@@ -29,19 +24,16 @@ for i in range(num_meals):
 
 print("\nData successfully recorded!\n")
 
-# Calorie Calculations
 total_calories = sum(calorie_values)
 average_calories = total_calories / len(calorie_values)
 
 daily_limit = float(input("Enter your daily calorie limit: "))
 
-# Compare with daily limit
 if total_calories > daily_limit:
     limit_status = "⚠ Warning: You have exceeded your daily calorie limit!"
 else:
     limit_status = "✅ Great! You are within your daily calorie limit."
 
-# Neatly Formatted Output
 print("\n==========================================")
 print("          Daily Calorie Summary           ")
 print("==========================================")
@@ -58,7 +50,6 @@ print("==========================================")
 print(limit_status)
 print("==========================================\n")
 
-# Save Session Log to File
 save_option = input("Would you like to save this session to a file? (y/n): ").lower()
 
 if save_option == 'y':
@@ -79,8 +70,9 @@ if save_option == 'y':
         file.write(limit_status + "\n")
         file.write("==========================================\n\n")
 
-    print(f"\n✅ Session successfully saved to '{filename}'!\n")
+    print(f"\n Session successfully saved to '{filename}'!\n")
 else:
-    print("\nSession not saved. Goodbye!\n")
+    print("\n Session not saved. Goodbye!\n")
+
 
 print("Thank you for using the Daily Calorie Tracker CLI!")
