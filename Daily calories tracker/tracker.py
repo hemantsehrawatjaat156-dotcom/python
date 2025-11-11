@@ -30,9 +30,9 @@ average_calories = total_calories / len(calorie_values)
 daily_limit = float(input("Enter your daily calorie limit: "))
 
 if total_calories > daily_limit:
-    limit_status = "⚠ Warning: You have exceeded your daily calorie limit!"
+    limit_status = "Warning: You have exceeded your daily calorie limit!"
 else:
-    limit_status = "✅ Great! You are within your daily calorie limit."
+    limit_status = "Great! You are within your daily calorie limit."
 
 print("\n==========================================")
 print("          Daily Calorie Summary           ")
@@ -76,3 +76,4 @@ else:
 
 
 print("Thank you for using the Daily Calorie Tracker CLI!")
+
